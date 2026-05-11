@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UN.IPT.MORGAN | Camisas con causa</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #06122e, #0b1f4d, #111827);
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      padding: 35px 20px;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(255,0,0,0.35), transparent 45%);
+    }
+
+    header h1 {
+      font-size: 42px;
+      color: white;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 15px auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .alliances {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 35px auto 0;
+    }
+
+    .alliance-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 22px;
+      padding: 20px;
+      transition: 0.3s;
+      backdrop-filter: blur(8px);
+    }
+
+    .alliance-card:hover {
+      transform: scale(1.04);
+    }
+
+    .logo-box {
+      height: 120px;
+      border-radius: 18px;
+      background: white;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .morgan {
+      color: #b91c1c;
+    }
+
+    .blue {
+      color: #1d4ed8;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .info div {
+      background: rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category {
+      margin-top: 50px;
+    }
+
+    .category h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+      color: #93c5fd;
+    }
+
+    .category p {
+      color: #dbeafe;
+      margin-bottom: 25px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.11);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.045);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .product img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      background: #e5e7eb;
+    }
+
+    .product-content {
+      padding: 18px;
+    }
+
+    .product h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      color: #dbeafe;
+      font-size: 14px;
+    }
+
+    .price {
+      margin-top: 15px;
+      background: rgba(0,0,0,0.28);
+      padding: 12px;
+      border-radius: 14px;
+      font-weight: bold;
+    }
+
+    .team {
+      text-align: center;
+    }
+
+    .team img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 28px;
+      margin-top: 25px;
+      border: 4px solid rgba(255,255,255,0.2);
+      transition: 0.3s;
+    }
+
+    .team img:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: rgba(0,0,0,0.35);
+      color: #dbeafe;
+    }
+
+    .floating-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: linear-gradient(135deg, #dc2626, #2563eb);
+      color: white;
+      padding: 16px 22px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .floating-button:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .floating-button {
+        left: 15px;
+        right: 15px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="floating-button" href="https://wa.me/573145561415" target="_blank">
+    Click acá para hacer pedido
+  </a>
+
+  <header>
+    <h1>UN.IPT.MORGAN</h1>
+    <p>
+      Camisas estampadas para apoyar a los chicos de la Universidad Nacional
+      que participarán en las Olimpiadas de Física de este año.
+    </p>
+
+    <div class="alliances">
+      <div class="alliance-card">
+        <div class="logo-box morgan">LOGO MORGAN</div>
+        <h3>Morgan Estampados</h3>
+        <p>Producción y estampado de las camisas.</p>
+        <p><strong>Instagram:</strong> @morgan_estampados</p>
+      </div>
+
+      <div class="alliance-card">
+        <div class="logo-box blue">LOGO PÁGINA</div>
+        <h3>La página que te avisa si la mecánica cuántica y la relatividad se unificaron</h3>
+        <p>Aliado científico, azul, blanco y con espíritu pirata.</p>
+        <p><strong>Instagram:</strong> @pagina_cuantica</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="info">
+      <div>
+        <h3>Tela</h3>
+        <p>Algodón peinado</p>
+      </div>
+      <div>
+        <h3>Regular</h3>
+        <p>$55.000 COP</p>
+      </div>
+      <div>
+        <h3>Oversize</h3>
+        <p>$65.000 COP</p>
+      </div>
+      <div>
+        <h3>Envíos</h3>
+        <p>A toda Colombia</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Catálogo</h2>
+
+    <div class="category">
+      <h2>Referencia página que te avisa si la mecánica cuántica y la relatividad se unificaron</h2>
+      <p>Diseños inspirados en la física moderna, el humor científico y la eterna espera por la gran unificación.</p>
+
+      <div class="products">
+        <div class="product">
+          <img src="img/camisa-1.jpg" alt="Camisa 1">
+          <div class="product-content">
+            <h3>Camisa Cuántica</h3>
+            <p>Diseño inspirado en mecánica cuántica.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="img/camisa-2.jpg" alt="Camisa 2">
+          <div class="product-content">
+            <h3>Camisa Relatividad</h3>
+            <p>Para quienes saben que el tiempo es relativo.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Ciencia</h2>
+      <p>Camisas para quienes aman aprender, experimentar y preguntarse cómo funciona el universo.</p>
+
+      <div class="products">
+        <div class="product">
+          <img src="img/camisa-3.jpg" alt="Camisa 3">
+          <div class="product-content">
+            <h3>Camisa Física</h3>
+            <p>Diseño para amantes de la ciencia.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="img/camisa-4.jpg" alt="Camisa 4">
+          <div class="product-content">
+            <h3>Camisa Universo</h3>
+            <p>Inspirada en estrellas, partículas y curiosidad.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>De Colombia para el mundo</h2>
+      <p>Diseños con orgullo colombiano para apoyar talento nacional.</p>
+
+      <div class="products">
+        <div class="product">
+          <img src="img/camisa-5.jpg" alt="Camisa 5">
+          <div class="product-content">
+            <h3>Camisa Colombia</h3>
+            <p>Una prenda para representar el talento colombiano.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="img/camisa-6.jpg" alt="Camisa 6">
+          <div class="product-content">
+            <h3>Camisa UN</h3>
+            <p>Inspirada en los estudiantes que representarán a la Universidad Nacional.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Grandes genios</h2>
+      <p>Camisas inspiradas en mentes brillantes que cambiaron nuestra forma de ver el mundo.</p>
+
+      <div class="products">
+        <div class="product">
+          <img src="img/camisa-7.jpg" alt="Camisa 7">
+          <div class="product-content">
+            <h3>Camisa Einstein</h3>
+            <p>Inspirada en uno de los grandes genios de la física.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="img/camisa-8.jpg" alt="Camisa 8">
+          <div class="product-content">
+            <h3>Camisa Newton</h3>
+            <p>Para quienes saben que toda buena idea tiene gravedad.</p>
+            <div class="price">Regular: $55.000 | Oversize: $65.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <h2>Ellos son los chicos que participarán</h2>
+    <p>
+      Con tu compra ayudas a cubrir pasajes, viáticos y gastos necesarios para representar a la Universidad Nacional.
+    </p>
+    <img src="img/equipo.jpg" alt="Foto de los chicos participantes">
+  </section>
+
+  <footer>
+    <p><strong>Pedidos:</strong> WhatsApp 314 556 1415</p>
+    <p>Envíos a toda Colombia · Camisas en algodón peinado · Regular y oversize</p>
+  </footer>
+
+</body>
+</html>
