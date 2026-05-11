@@ -4,755 +4,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>UN.IPT.MORGAN</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:"Montserrat",sans-serif;
-      background:#f5f7fb;
-      color:#111827;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .container{
-      width:90%;
-      max-width:1400px;
-      margin:auto;
-    }
-
-    /* HERO */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:"Montserrat",sans-serif;background:#f5f7fb;color:#111827}
+    a{text-decoration:none;color:inherit}
+    .container{width:90%;max-width:1400px;margin:auto}
 
     .hero{
-      background:
-      linear-gradient(rgba(7,15,35,0.82),
-      rgba(7,15,35,0.92)),
+      background:linear-gradient(rgba(7,15,35,.82),rgba(7,15,35,.92)),
       url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1600&auto=format&fit=crop");
-
-      background-size:cover;
-      background-position:center;
-
-      color:white;
-      padding:90px 0 80px;
+      background-size:cover;background-position:center;color:white;padding:90px 0 80px
     }
 
-    .hero-content{
-      text-align:center;
-      max-width:1000px;
-      margin:auto;
-    }
+    .hero-content{text-align:center;max-width:1000px;margin:auto}
+    .hero h1{font-size:64px;font-weight:800;margin-bottom:20px}
+    .hero p{font-size:19px;line-height:1.8;color:#dbeafe}
 
-    .hero h1{
-      font-size:64px;
-      font-weight:800;
-      margin-bottom:20px;
-    }
+    .alliances{margin-top:55px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px}
+    .alliance-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:30px;backdrop-filter:blur(10px);transition:.35s}
+    .alliance-card:hover{transform:translateY(-8px)}
+    .logo-area{width:100%;height:120px;border-radius:20px;background:white;margin-bottom:22px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800}
+    .morgan{color:#b91c1c}
+    .quantum{color:#2563eb}
+    .alliance-card h3{margin-bottom:10px;font-size:24px}
+    .alliance-card p{color:#dbeafe;line-height:1.7}
 
-    .hero p{
-      font-size:19px;
-      line-height:1.8;
-      color:#dbeafe;
-    }
+    .about{padding:90px 0;background:white}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+    .about h2{font-size:45px;margin-bottom:24px;color:#0f172a}
+    .about p{line-height:1.9;color:#374151;margin-bottom:18px;font-size:17px}
+    .about-image img{width:100%;border-radius:30px;box-shadow:0 25px 50px rgba(0,0,0,.12)}
 
-    /* ALLIANCES */
+    .catalog{padding:90px 0;background:#edf2f7}
+    .section-title{text-align:center;margin-bottom:70px}
+    .section-title h2{font-size:52px;margin-bottom:18px;color:#0f172a}
+    .section-title p{max-width:900px;margin:auto;color:#475569;line-height:1.8;font-size:17px}
 
-    .alliances{
-      margin-top:55px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:25px;
-    }
+    .category{margin-bottom:80px}
+    .category-title{margin-bottom:30px}
+    .category-title h3{font-size:34px;color:#0f172a;margin-bottom:10px}
+    .category-title p{color:#475569;line-height:1.7}
 
-    .alliance-card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:28px;
-      padding:30px;
-      backdrop-filter:blur(10px);
-      transition:0.35s;
-    }
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .product{background:white;border-radius:26px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,.08);transition:.35s}
+    .product:hover{transform:translateY(-10px) scale(1.03)}
+    .product img{width:100%;height:360px;object-fit:cover;background:white}
+    .product-body{padding:22px}
+    .product-body h4{font-size:22px;margin-bottom:10px;color:#0f172a}
+    .sizes{margin-top:12px;color:#1e3a8a;font-size:14px;font-weight:700}
+    .price{margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;font-size:15px;color:#111827}
+    .price strong{color:#b91c1c}
+    .order-small{margin-top:18px;display:block;text-align:center;background:#0f172a;color:white;padding:12px;border-radius:999px;font-weight:700;transition:.3s}
+    .order-small:hover{background:#b91c1c;transform:scale(1.04)}
 
-    .alliance-card:hover{
-      transform:translateY(-8px);
-    }
+    .team{padding:100px 0;background:white;text-align:center}
+    .team h2{font-size:52px;margin-bottom:20px;color:#0f172a}
+    .team p{max-width:900px;margin:auto;color:#475569;line-height:1.9;font-size:18px}
+    .team img{margin-top:45px;width:100%;max-width:1000px;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.15);transition:.35s}
+    .team img:hover{transform:scale(1.02)}
 
-    .logo-area{
-      width:100%;
-      height:120px;
-      border-radius:20px;
-      background:white;
-      margin-bottom:22px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      font-size:28px;
-      font-weight:800;
-    }
-
-    .morgan{
-      color:#b91c1c;
-    }
-
-    .quantum{
-      color:#2563eb;
-    }
-
-    .alliance-card h3{
-      margin-bottom:10px;
-      font-size:24px;
-    }
-
-    .alliance-card p{
-      color:#dbeafe;
-      line-height:1.7;
-    }
-
-    /* ABOUT */
-
-    .about{
-      padding:90px 0;
-      background:white;
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .about h2{
-      font-size:45px;
-      margin-bottom:24px;
-      color:#0f172a;
-    }
-
-    .about p{
-      line-height:1.9;
-      color:#374151;
-      margin-bottom:18px;
-      font-size:17px;
-    }
-
-    .about-image img{
-      width:100%;
-      border-radius:30px;
-      box-shadow:0 25px 50px rgba(0,0,0,0.12);
-    }
-
-    /* CATALOG */
-
-    .catalog{
-      padding:90px 0;
-      background:#edf2f7;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title h2{
-      font-size:52px;
-      margin-bottom:18px;
-      color:#0f172a;
-    }
-
-    .section-title p{
-      max-width:900px;
-      margin:auto;
-      color:#475569;
-      line-height:1.8;
-      font-size:17px;
-    }
-
-    .category{
-      margin-bottom:80px;
-    }
-
-    .category-title{
-      margin-bottom:30px;
-    }
-
-    .category-title h3{
-      font-size:34px;
-      color:#0f172a;
-      margin-bottom:10px;
-    }
-
-    .category-title p{
-      color:#475569;
-      line-height:1.7;
-    }
-
-    .products{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:25px;
-    }
-
-    .product{
-      background:white;
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:0 15px 35px rgba(0,0,0,0.08);
-      transition:0.35s;
-    }
-
-    .product:hover{
-      transform:translateY(-10px) scale(1.03);
-    }
-
-    .product img{
-      width:100%;
-      height:290px;
-      object-fit:cover;
-    }
-
-    .product-body{
-      padding:22px;
-    }
-
-    .product-body h4{
-      font-size:22px;
-      margin-bottom:10px;
-      color:#0f172a;
-    }
-
-    .product-body p{
-      color:#475569;
-      line-height:1.7;
-      font-size:15px;
-    }
-
-    .sizes{
-      margin-top:12px;
-      color:#1e3a8a;
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .price{
-      margin-top:16px;
-      padding-top:16px;
-      border-top:1px solid #e5e7eb;
-      font-size:15px;
-      color:#111827;
-    }
-
-    .price strong{
-      color:#b91c1c;
-    }
-
-    .order-small{
-      margin-top:18px;
-      display:block;
-      text-align:center;
-      background:#0f172a;
-      color:white;
-      padding:12px;
-      border-radius:999px;
-      font-weight:700;
-      transition:0.3s;
-    }
-
-    .order-small:hover{
-      background:#b91c1c;
-      transform:scale(1.04);
-    }
-
-    /* TEAM */
-
-    .team{
-      padding:100px 0;
-      background:white;
-      text-align:center;
-    }
-
-    .team h2{
-      font-size:52px;
-      margin-bottom:20px;
-      color:#0f172a;
-    }
-
-    .team p{
-      max-width:900px;
-      margin:auto;
-      color:#475569;
-      line-height:1.9;
-      font-size:18px;
-    }
-
-    .team img{
-      margin-top:45px;
-      width:100%;
-      max-width:1000px;
-      border-radius:32px;
-      box-shadow:0 30px 60px rgba(0,0,0,0.15);
-      transition:0.35s;
-    }
-
-    .team img:hover{
-      transform:scale(1.02);
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:#0f172a;
-      color:white;
-      text-align:center;
-      padding:45px 20px;
-    }
-
-    footer p{
-      color:#cbd5e1;
-      margin-top:8px;
-    }
-
-    /* FLOATING BUTTON */
+    footer{background:#0f172a;color:white;text-align:center;padding:45px 20px}
+    footer p{color:#cbd5e1;margin-top:8px;line-height:1.7}
+    .notice{max-width:900px;margin:25px auto 0;font-size:14px;color:#94a3b8}
 
     .floating-order{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-
-      background:linear-gradient(135deg,#25D366,#128C7E);
-      color:white;
-
-      padding:16px 24px;
-      border-radius:999px;
-
-      font-weight:800;
-      font-size:15px;
-
-      display:flex;
-      align-items:center;
-      gap:10px;
-
-      box-shadow:0 18px 35px rgba(0,0,0,0.25);
-
-      z-index:999;
-      transition:0.3s;
+      position:fixed;right:20px;bottom:20px;background:linear-gradient(135deg,#25D366,#128C7E);
+      color:white;padding:16px 24px;border-radius:999px;font-weight:800;font-size:15px;
+      display:flex;align-items:center;gap:10px;box-shadow:0 18px 35px rgba(0,0,0,.25);z-index:999;transition:.3s
     }
 
-    .floating-order:hover{
-      transform:scale(1.08);
-    }
-
-    /* RESPONSIVE */
+    .floating-order:hover{transform:scale(1.08)}
 
     @media(max-width:1100px){
-
-      .products{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
+      .products{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr}
     }
 
     @media(max-width:700px){
-
-      .hero h1{
-        font-size:42px;
-      }
-
-      .section-title h2,
-      .team h2,
-      .about h2{
-        font-size:36px;
-      }
-
-      .products{
-        grid-template-columns:1fr;
-      }
-
-      .floating-order{
-        left:15px;
-        right:15px;
-        justify-content:center;
-      }
-
+      .hero{padding:70px 0 60px}
+      .hero h1{font-size:42px}
+      .hero p{font-size:16px}
+      .section-title h2,.team h2,.about h2{font-size:36px}
+      .category-title h3{font-size:28px}
+      .products{grid-template-columns:1fr}
+      .product img{height:330px}
+      .floating-order{left:15px;right:15px;justify-content:center}
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <!-- FLOATING BUTTON -->
-
-  <a class="floating-order"
-    href="https://wa.me/573145561415"
-    target="_blank">
-
+  <a class="floating-order" href="https://wa.me/573145561415" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
     Click acá para hacer pedido
-
   </a>
 
-  <!-- HERO -->
-
   <header class="hero">
-
     <div class="container">
-
       <div class="hero-content">
-
         <h1>UN.IPT.MORGAN</h1>
-
         <p>
-          Camisas estampadas para apoyar al equipo de estudiantes de la
-          Universidad Nacional que representará a Colombia en el
-          International Physicists’ Tournament (IPT) en Estados Unidos.
+          Camisas estampadas para apoyar a estudiantes que participarán en el
+          International Physicists’ Tournament (IPT), contribuyendo a gastos de preparación,
+          materiales, experimentos, transporte y demás costos asociados.
         </p>
-
       </div>
-
-      <!-- ALLIANCES -->
 
       <div class="alliances">
-
         <div class="alliance-card">
-
-          <div class="logo-area morgan">
-            LOGO MORGAN
-          </div>
-
+          <div class="logo-area morgan">LOGO MORGAN</div>
           <h3>Morgan Estampados</h3>
-
-          <p>
-            Aliado encargado de la producción y estampado de las camisas.
-          </p>
-
+          <p>Aliado encargado de la producción y estampado de las camisas.</p>
         </div>
 
         <div class="alliance-card">
-
-          <div class="logo-area quantum">
-            LOGO PÁGINA
-          </div>
-
-          <h3>
-            La página que te avisa si la mecánica cuántica y la relatividad
-            se unificaron
-          </h3>
-
-          <p>
-            Aliado científico y creativo detrás de parte de esta iniciativa.
-          </p>
-
+          <div class="logo-area quantum">LOGO PÁGINA</div>
+          <h3>Página que te avisa si ya se unificó la Cuántica y la Relatividad General</h3>
+          <p>Aliado científico y creativo detrás de parte de esta iniciativa.</p>
         </div>
-
       </div>
-
     </div>
-
   </header>
 
-  <!-- ABOUT -->
-
   <section class="about">
-
     <div class="container">
-
       <div class="about-grid">
-
         <div>
-
-          <h2>
-            ¿Por qué apoyar al equipo IPT UNAL?
-          </h2>
-
+          <h2>¿Por qué apoyar al equipo IPT?</h2>
           <p>
-            El equipo de la Universidad Nacional representará a Colombia
-            en el International Physicists’ Tournament (IPT), una de las
-            competencias universitarias más exigentes del mundo en física.
+            El International Physicists’ Tournament es una competencia universitaria
+            en la que los equipos trabajan durante meses en problemas abiertos de física.
           </p>
-
           <p>
-            Durante meses los estudiantes trabajan en experimentos,
-            simulaciones computacionales, análisis matemáticos y debates
-            científicos para preparar soluciones a problemas abiertos
-            de física.
+            La preparación incluye experimentos, simulaciones computacionales,
+            análisis matemáticos, discusiones científicas y construcción de montajes.
           </p>
-
           <p>
-            Las ganancias de estas camisas ayudarán a cubrir materiales,
-            preparación experimental, gastos asociados al proceso de entrenamiento,
-            transporte y otros costos necesarios para participar en el torneo.
+            Las ganancias de estas camisas apoyarán gastos asociados a la preparación:
+            materiales, experimentos, transporte, viáticos y otros costos necesarios
+            para participar en el proceso.
           </p>
-
           <p>
-            Cada compra es una forma de apoyar el talento científico colombiano.
+            Cada compra es una forma concreta de apoyar talento científico estudiantil.
           </p>
-
         </div>
 
         <div class="about-image">
-
-          <img src="img/equipo.jpg" alt="Equipo IPT UNAL">
-
+          <img src="img/equipo.jpg" alt="Equipo IPT">
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- CATALOG -->
-
   <section class="catalog">
-
     <div class="container">
-
       <div class="section-title">
-
         <h2>Catálogo</h2>
-
         <p>
           Todas las camisas están disponibles en algodón peinado,
           tallas S, M, L, XL y Oversize.
           Regular: $55.000 COP · Oversize: $65.000 COP.
         </p>
-
       </div>
 
-      <!-- CATEGORY -->
-
       <div class="category">
-
         <div class="category-title">
-
-          <h3>
-            Referencia página que te avisa si la mecánica cuántica y la relatividad se unificaron
-          </h3>
-
-          <p>
-            Diseños inspirados en física moderna, relatividad y humor científico.
-          </p>
-
+          <h3>Página que te avisa si ya se unificó la Cuántica y la Relatividad General</h3>
+          <p>Referencias A.</p>
         </div>
 
         <div class="products">
-
-          <!-- PRODUCT -->
-
-          <article class="product">
-
-            <img src="img/camisa-1.jpg" alt="Camisa">
-
-            <div class="product-body">
-
-              <h4>Camisa Cuántica</h4>
-
-              <p>
-                Diseño inspirado en mecánica cuántica y el misterio del universo.
-              </p>
-
-              <p class="sizes">
-                Disponible en S, M, L, XL y Oversize
-              </p>
-
-              <div class="price">
-                Regular: <strong>$55.000</strong><br>
-                Oversize: <strong>$65.000</strong>
-              </div>
-
-              <a class="order-small"
-                href="https://wa.me/573145561415"
-                target="_blank">
-
-                Pedir
-
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT -->
-
-          <article class="product">
-
-            <img src="img/camisa-2.jpg" alt="Camisa">
-
-            <div class="product-body">
-
-              <h4>Camisa Relatividad</h4>
-
-              <p>
-                Inspirada en Einstein y la relatividad.
-              </p>
-
-              <p class="sizes">
-                Disponible en S, M, L, XL y Oversize
-              </p>
-
-              <div class="price">
-                Regular: <strong>$55.000</strong><br>
-                Oversize: <strong>$65.000</strong>
-              </div>
-
-              <a class="order-small"
-                href="https://wa.me/573145561415"
-                target="_blank">
-
-                Pedir
-
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT -->
-
-          <article class="product">
-
-            <img src="img/camisa-3.jpg" alt="Camisa">
-
-            <div class="product-body">
-
-              <h4>Camisa Espacio</h4>
-
-              <p>
-                Diseño inspirado en estrellas, galaxias y exploración espacial.
-              </p>
-
-              <p class="sizes">
-                Disponible en S, M, L, XL y Oversize
-              </p>
-
-              <div class="price">
-                Regular: <strong>$55.000</strong><br>
-                Oversize: <strong>$65.000</strong>
-              </div>
-
-              <a class="order-small"
-                href="https://wa.me/573145561415"
-                target="_blank">
-
-                Pedir
-
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT -->
-
-          <article class="product">
-
-            <img src="img/camisa-4.jpg" alt="Camisa">
-
-            <div class="product-body">
-
-              <h4>Camisa Física</h4>
-
-              <p>
-                Para quienes viven la ciencia todos los días.
-              </p>
-
-              <p class="sizes">
-                Disponible en S, M, L, XL y Oversize
-              </p>
-
-              <div class="price">
-                Regular: <strong>$55.000</strong><br>
-                Oversize: <strong>$65.000</strong>
-              </div>
-
-              <a class="order-small"
-                href="https://wa.me/573145561415"
-                target="_blank">
-
-                Pedir
-
-              </a>
-
-            </div>
-
-          </article>
-
+          <article class="product"><img src="img/A1.jpeg" alt="Referencia A1"><div class="product-body"><h4>Referencia A1</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A1" target="_blank">Pedir A1</a></div></article>
+          <article class="product"><img src="img/A2.jpeg" alt="Referencia A2"><div class="product-body"><h4>Referencia A2</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A2" target="_blank">Pedir A2</a></div></article>
+          <article class="product"><img src="img/A3.jpeg" alt="Referencia A3"><div class="product-body"><h4>Referencia A3</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A3" target="_blank">Pedir A3</a></div></article>
+          <article class="product"><img src="img/A4.jpeg" alt="Referencia A4"><div class="product-body"><h4>Referencia A4</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A4" target="_blank">Pedir A4</a></div></article>
+          <article class="product"><img src="img/A5.jpeg" alt="Referencia A5"><div class="product-body"><h4>Referencia A5</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A5" target="_blank">Pedir A5</a></div></article>
+          <article class="product"><img src="img/A6.jpeg" alt="Referencia A6"><div class="product-body"><h4>Referencia A6</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20A6" target="_blank">Pedir A6</a></div></article>
         </div>
-
       </div>
 
+      <div class="category">
+        <div class="category-title">
+          <h3>Ciencia</h3>
+          <p>Referencias B.</p>
+        </div>
+
+        <div class="products">
+          <article class="product"><img src="img/B1.jpeg" alt="Referencia B1"><div class="product-body"><h4>Referencia B1</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B1" target="_blank">Pedir B1</a></div></article>
+          <article class="product"><img src="img/B2.jpeg" alt="Referencia B2"><div class="product-body"><h4>Referencia B2</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B2" target="_blank">Pedir B2</a></div></article>
+          <article class="product"><img src="img/B3.jpeg" alt="Referencia B3"><div class="product-body"><h4>Referencia B3</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B3" target="_blank">Pedir B3</a></div></article>
+          <article class="product"><img src="img/B4.jpeg" alt="Referencia B4"><div class="product-body"><h4>Referencia B4</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B4" target="_blank">Pedir B4</a></div></article>
+          <article class="product"><img src="img/B5.jpeg" alt="Referencia B5"><div class="product-body"><h4>Referencia B5</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B5" target="_blank">Pedir B5</a></div></article>
+          <article class="product"><img src="img/B6.jpeg" alt="Referencia B6"><div class="product-body"><h4>Referencia B6</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B6" target="_blank">Pedir B6</a></div></article>
+          <article class="product"><img src="img/B7.jpeg" alt="Referencia B7"><div class="product-body"><h4>Referencia B7</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B7" target="_blank">Pedir B7</a></div></article>
+          <article class="product"><img src="img/B8.jpeg" alt="Referencia B8"><div class="product-body"><h4>Referencia B8</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B8" target="_blank">Pedir B8</a></div></article>
+          <article class="product"><img src="img/B9.jpeg" alt="Referencia B9"><div class="product-body"><h4>Referencia B9</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B9" target="_blank">Pedir B9</a></div></article>
+          <article class="product"><img src="img/B10.jpeg" alt="Referencia B10"><div class="product-body"><h4>Referencia B10</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B10" target="_blank">Pedir B10</a></div></article>
+          <article class="product"><img src="img/B11.jpeg" alt="Referencia B11"><div class="product-body"><h4>Referencia B11</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B11" target="_blank">Pedir B11</a></div></article>
+          <article class="product"><img src="img/B12.jpeg" alt="Referencia B12"><div class="product-body"><h4>Referencia B12</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B12" target="_blank">Pedir B12</a></div></article>
+          <article class="product"><img src="img/B13.jpeg" alt="Referencia B13"><div class="product-body"><h4>Referencia B13</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B13" target="_blank">Pedir B13</a></div></article>
+          <article class="product"><img src="img/B14.jpeg" alt="Referencia B14"><div class="product-body"><h4>Referencia B14</h4><p class="sizes">Disponible en S, M, L, XL y Oversize</p><div class="price">Regular: <strong>$55.000</strong><br>Oversize: <strong>$65.000</strong></div><a class="order-small" href="https://wa.me/573145561415?text=Hola,%20quiero%20pedir%20la%20Referencia%20B14" target="_blank">Pedir B14</a></div></article>
+        </div>
+      </div>
     </div>
-
   </section>
-
-  <!-- TEAM -->
 
   <section class="team">
-
     <div class="container">
-
-      <h2>
-        El equipo IPT UNAL
-      </h2>
-
+      <h2>Equipo IPT</h2>
       <p>
-        Ellos representarán a Colombia en el International Physicists’ Tournament.
         Con tu apoyo ayudas a financiar preparación experimental, materiales,
-        transporte y otros gastos asociados a la competencia.
+        transporte, viáticos y otros gastos asociados a la participación.
       </p>
-
       <img src="img/equipo.jpg" alt="Equipo IPT">
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-
     <h3>UN.IPT.MORGAN</h3>
+    <p>Pedidos por WhatsApp: 314 556 1415</p>
+    <p>Envíos a toda Colombia</p>
 
-    <p>
-      Pedidos por WhatsApp: 314 556 1415
+    <p class="notice">
+      Esta página es administrada como una iniciativa de autogestión estudiantil.
+      No involucra directamente a la Universidad Nacional de Colombia ni actúa
+      en representación oficial del torneo.
     </p>
-
-    <p>
-      Envíos a toda Colombia
-    </p>
-
   </footer>
 
 </body>
-
 </html>
